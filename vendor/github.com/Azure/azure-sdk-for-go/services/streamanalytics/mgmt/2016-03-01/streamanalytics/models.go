@@ -20,16 +20,17 @@ package streamanalytics
 import (
 	"context"
 	"encoding/json"
+	"net/http"
+
 	"github.com/Azure/go-autorest/autorest"
 	"github.com/Azure/go-autorest/autorest/azure"
 	"github.com/Azure/go-autorest/autorest/date"
 	"github.com/Azure/go-autorest/autorest/to"
 	"github.com/Azure/go-autorest/tracing"
-	"net/http"
 )
 
 // The package's fully qualified name.
-const fqdn = "github.com/Azure/azure-sdk-for-go/services/streamanalytics/mgmt/2016-03-01/streamanalytics"
+const fqdn = "github.com/Azure/azure-sdk-for-go/profiles/preview/preview/streamanalytics/mgmt/streamanalytics"
 
 // AvroSerialization describes how data from an input is serialized or how data is serialized when written
 // to an output in Avro format.

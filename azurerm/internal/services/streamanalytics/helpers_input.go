@@ -3,7 +3,7 @@ package streamanalytics
 import (
 	"fmt"
 
-	"github.com/Azure/azure-sdk-for-go/services/streamanalytics/mgmt/2016-03-01/streamanalytics"
+	"github.com/Azure/azure-sdk-for-go/profiles/preview/preview/streamanalytics/mgmt/streamanalytics"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
 	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/utils"
@@ -53,7 +53,7 @@ func schemaStreamAnalyticsStreamInputSerialization() *schema.Schema {
 func expandStreamAnalyticsStreamInputSerialization(input []interface{}) (streamanalytics.BasicSerialization, error) {
 	v := input[0].(map[string]interface{})
 
-	inputType := streamanalytics.Type(v["type"].(string))
+	inputType := streamanalytics.TypeBasicSerialization(v["type"].(string))
 	encoding := v["encoding"].(string)
 	fieldDelimiter := v["field_delimiter"].(string)
 

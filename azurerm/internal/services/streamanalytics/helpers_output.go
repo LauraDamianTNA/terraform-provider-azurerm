@@ -7,7 +7,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
 
-	"github.com/Azure/azure-sdk-for-go/services/streamanalytics/mgmt/2016-03-01/streamanalytics"
+	"github.com/Azure/azure-sdk-for-go/profiles/preview/preview/streamanalytics/mgmt/streamanalytics"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
@@ -64,7 +64,7 @@ func schemaStreamAnalyticsOutputSerialization() *schema.Schema {
 func expandStreamAnalyticsOutputSerialization(input []interface{}) (streamanalytics.BasicSerialization, error) {
 	v := input[0].(map[string]interface{})
 
-	outputType := streamanalytics.Type(v["type"].(string))
+	outputType := streamanalytics.TypeBasicSerialization(v["type"].(string))
 	encoding := v["encoding"].(string)
 	fieldDelimiter := v["field_delimiter"].(string)
 	format := v["format"].(string)

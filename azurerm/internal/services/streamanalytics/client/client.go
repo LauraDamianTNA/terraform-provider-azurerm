@@ -1,10 +1,11 @@
 package client
 
 import (
-	"github.com/Azure/azure-sdk-for-go/services/streamanalytics/mgmt/2016-03-01/streamanalytics"
+	"github.com/Azure/azure-sdk-for-go/profiles/preview/preview/streamanalytics/mgmt/streamanalytics"
 	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/common"
 )
 
+// Client is the proxy that makes the calls
 type Client struct {
 	FunctionsClient       *streamanalytics.FunctionsClient
 	JobsClient            *streamanalytics.StreamingJobsClient
@@ -13,6 +14,7 @@ type Client struct {
 	TransformationsClient *streamanalytics.TransformationsClient
 }
 
+// NewClient builds and returns a Client
 func NewClient(o *common.ClientOptions) *Client {
 	functionsClient := streamanalytics.NewFunctionsClientWithBaseURI(o.ResourceManagerEndpoint, o.SubscriptionId)
 	o.ConfigureClient(&functionsClient.Client, o.ResourceManagerAuthorizer)
