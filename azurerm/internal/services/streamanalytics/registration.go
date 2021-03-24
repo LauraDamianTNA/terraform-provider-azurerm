@@ -36,6 +36,7 @@ func (r Registration) SupportedResources() map[string]*schema.Resource {
 		"azurerm_stream_analytics_output_servicebus_queue": resourceStreamAnalyticsOutputServiceBusQueue(),
 		"azurerm_stream_analytics_output_servicebus_topic": resourceStreamAnalyticsOutputServiceBusTopic(),
 		"azurerm_stream_analytics_reference_input_blob":    resourceStreamAnalyticsReferenceInputBlob(),
+		"azurerm_stream_analytics_reference_input_mssql":   resourceStreamAnalyticsReferenceInputSQL(),
 		"azurerm_stream_analytics_stream_input_blob":       resourceStreamAnalyticsStreamInputBlob(),
 		"azurerm_stream_analytics_stream_input_eventhub":   resourceStreamAnalyticsStreamInputEventHub(),
 		"azurerm_stream_analytics_stream_input_iothub":     resourceStreamAnalyticsStreamInputIoTHub(),
